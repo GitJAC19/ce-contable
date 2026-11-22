@@ -51,7 +51,8 @@ def nav_items(current):
 
 def header(current):
     items = nav_items(current)
-    return f'''<a class="skip" href="#contenido">Saltar al contenido</a>
+    return f'''<div class="draft-banner" role="note"><span>Propuesta de diseño</span><span aria-hidden="true">·</span><span>JAC LAB</span><span aria-hidden="true">·</span><span>Borrador</span></div>
+<a class="skip" href="#contenido">Saltar al contenido</a>
 <header class="site-header wrap">
   <a class="logo" href="index.html" aria-label="C&amp;E Contable, inicio"><b>C&amp;E</b><span>CONTABLE</span></a>
   <nav class="menu" aria-label="Principal">
@@ -98,7 +99,7 @@ def footer():
         </div>
       </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 C&amp;E Contable</span><span>Contabilidad · Finanzas · Tributación · Auditoría</span></div>
+    <div class="footer-bottom"><span>© 2026 C&amp;E Contable · Contabilidad · Finanzas · Tributación · Auditoría</span><span>Diseño y desarrollo: JAC LAB · Propuesta, todos los derechos reservados</span></div>
   </div>
 </footer>'''
 

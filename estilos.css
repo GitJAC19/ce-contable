@@ -235,3 +235,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   .member { padding: 24px; }
   .footer-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ---------- FRANJA DE PROPUESTA (quitar cuando el cliente apruebe y pague) ---------- */
+.draft-banner { position: sticky; top: 0; z-index: 40; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 12px; padding: 9px max(16px, env(safe-area-inset-right, 0px)) 9px max(16px, env(safe-area-inset-left, 0px)); background: repeating-linear-gradient(135deg, #13243A 0 14px, #1A2E48 14px 28px); color: #FFFFFF; font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; text-align: center; border-bottom: 2px solid var(--cyan); }
+.draft-banner span:nth-child(3) { color: var(--cyan); font-weight: 500; }
