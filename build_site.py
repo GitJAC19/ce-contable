@@ -11,6 +11,8 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
          '<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 fill=%27%231F4E7E%27/%3E%3Ctext x=%2732%27 y=%2742%27 font-family=%27Georgia,serif%27 font-size=%2728%27 fill=%27white%27 text-anchor=%27middle%27%3EC%26amp;E%3C/text%3E%3C/svg%3E">\n')
 
 PAGES = [("index.html", "Inicio"), ("servicios.html", "Servicios"), ("la-firma.html", "La firma"), ("contacto.html", "Contacto")]
+# Páginas que solo se enlazan desde el pie de página
+FOOTER_EXTRA = [("mision.html", "Misión, visión y valores")]
 
 PEOPLE = [
     ("Jhonatan Estiben Correa Ángel", "Jhonatan E. Correa Ángel", "Contador Público y Financiero", "317 237 5824", "573172375824", "jcorrea@cyecontable.com"),
@@ -77,7 +79,7 @@ def footer():
     people = "\n".join(
         f'<div><p class="who">{short}</p><p>{role}</p><p class="mono">{phone}</p><p class="mono">{mail}</p></div>'
         for _, short, role, phone, _, mail in PEOPLE)
-    links = "\n".join(f'<li><a href="{h}">{l}</a></li>' for h, l in PAGES)
+    links = "\n".join(f'<li><a href="{h}">{l}</a></li>' for h, l in PAGES + FOOTER_EXTRA)
     return f'''<footer class="site-footer on-blue">
   <span class="lights" aria-hidden="true"></span>
   <div class="wrap">
@@ -99,7 +101,7 @@ def footer():
         </div>
       </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 C&amp;E Contable · Contabilidad · Finanzas · Tributación · Auditoría</span><span>Diseño y desarrollo: JAC LAB · Propuesta, todos los derechos reservados</span></div>
+    <div class="footer-bottom"><span>© 2026 Cifras y Estrategias S.A.S. · C&amp;E Contable</span><span>Diseño y desarrollo: JAC LAB · Propuesta, todos los derechos reservados</span></div>
   </div>
 </footer>'''
 
@@ -264,6 +266,7 @@ def firma():
     <div class="firma-text">
       <p>Bienvenido a nuestro portafolio de servicios. Aquí encontrará nuestra oferta completa en contabilidad, finanzas, tributación y auditoría, diseñada para brindarle soluciones efectivas y personalizadas.</p>
       <p>Además, hemos creado secciones exclusivas para nuestros clientes, con el objetivo de atender sus necesidades corporativas de manera integral.</p>
+      <a class="textlink" href="mision.html">Nuestra misión, visión y valores&nbsp;&nbsp;→</a>
     </div>
   </div>
 </section>
@@ -360,7 +363,81 @@ def doc(fname, title, body, full=True):
     return f'<title>{page_title}</title>\n<meta name="claude:viewport-fit-sides" content="cover">\n{FONTS}\n{main}'
 
 
-builders = {"index.html": inicio, "servicios.html": servicios, "la-firma.html": firma, "contacto.html": contacto}
+
+VALORES = [
+    ("Respeto", "Reconocemos la dignidad, los derechos y las opiniones de cada persona en Cifras y Estrategias S.A.S., con un ambiente de tolerancia, comunicación asertiva y trato justo entre colaboradores, clientes y aliados estratégicos."),
+    ("Verdad", "Actuamos con transparencia en cada uno de los procesos de la organización. Al actuar con veracidad fortalecemos la confianza de los clientes y garantizamos la integridad profesional."),
+    ("Solidaridad", "Trabajamos de forma colaborativa, con empatía, sentido de pertenencia y apoyo mutuo entre los miembros del equipo, y promovemos la cooperación como base del crecimiento conjunto y de un entorno armonioso."),
+    ("Compromiso", "Asumimos con responsabilidad los objetivos que nos planteamos, en coherencia con la identidad de la organización, para asegurar la excelencia en los servicios y cumplir las metas establecidas."),
+    ("Confianza", "Consolidamos relaciones sólidas, creíbles y estables en el tiempo, dentro y fuera de la firma, con transparencia, cumplimiento de los compromisos y coherencia en el actuar diario."),
+]
+
+PROCESOS = [
+    ("E", "Procesos estratégicos", "estrategicos", ["Planeación estratégica", "Gestión administrativa", "Gestión de calidad", "Direccionamiento organizacional"]),
+    ("M", "Procesos misionales", "misionales", ["Asesoría contable", "Asesoría tributaria", "Gestión financiera", "Atención al cliente"]),
+    ("A", "Procesos de apoyo", "apoyo", ["Gestión del talento humano", "Gestión documental", "Gestión tecnológica", "Gestión financiera interna", "Gestión legal y cumplimiento normativo"]),
+    ("C", "Evaluación y control", "control", ["Control interno", "Auditoría administrativa", "Evaluación del desempeño", "Indicadores de gestión", "Productividad del personal"]),
+]
+
+
+def mision():
+    valores = "\n".join(
+        f'<li><span class="ref">V-{i + 1:02d}</span><h3>{n}</h3><p>{d}</p></li>' for i, (n, d) in enumerate(VALORES))
+    filas = []
+    for code, title, cls, items in PROCESOS:
+        steps = "".join(f'<li>{it}</li>' for it in items)
+        tag = ' <span class="tag">Clave del negocio</span>' if cls == "misionales" else ""
+        filas.append(f'<div class="pm-row pm-{cls}"><p class="pm-title"><span class="code">{code}—</span>{title}{tag}</p><ol>{steps}</ol></div>')
+    filas = "\n        ".join(filas)
+    return "Misión, visión y valores", f'''{page_hero('<a href="la-firma.html">La firma</a> / Misión', 'Misión, visión <em>y valores</em>', 'Los principios que guían a Cifras y Estrategias S.A.S. en cada asesoría.')}
+
+<section class="section white">
+  <div class="wrap statement">
+    <div class="statement-label"><p class="kicker">Misión</p><span class="mono-note">Lo que hacemos hoy</span></div>
+    <p class="statement-text">Brindar servicios integrales de asesoría <em>contable, financiera y tributaria</em> a personas naturales y jurídicas, mediante procesos confiables, transparentes y orientados al cumplimiento normativo, enfocados en generar valor estratégico que contribuya a la sostenibilidad, competitividad y desarrollo empresarial de nuestros clientes, garantizando altos estándares de calidad y ética profesional.</p>
+  </div>
+</section>
+
+<section class="section vision on-blue">
+  <span class="amp" aria-hidden="true">&amp;</span>
+  <span class="lights" aria-hidden="true"></span>
+  <div class="wrap vision-grid">
+    <div><p class="kicker">Visión</p><p class="year" aria-label="Año 2030">2030</p><span class="mono-note">Medellín</span></div>
+    <p class="statement-text">Para el año 2030, Cifras y Estrategias S.A.S. será reconocida en Medellín como una firma contable <em>innovadora, confiable y altamente profesional</em>, destacada por sus procesos administrativos sólidos, su adopción de tecnologías digitales y su contribución al fortalecimiento empresarial de pequeñas y medianas organizaciones.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="servicios-head">
+      <div><p class="kicker">Valores corporativos</p><h2 class="h2">Cinco principios en el <em>actuar diario</em>.</h2></div>
+      <p>Son los principios éticos y morales de nuestra cultura: guían el trabajo del equipo y la forma en que nos relacionamos con clientes, proveedores y la comunidad.</p>
+    </div>
+    <ul class="values">
+{valores}
+    </ul>
+  </div>
+</section>
+
+<section class="section white">
+  <div class="wrap">
+    <div class="servicios-head">
+      <div><p class="kicker">Cómo trabajamos</p><h2 class="h2">Mapa de <em>procesos</em></h2></div>
+      <p>Cuatro grupos de procesos conectan lo que cada cliente necesita con su satisfacción final.</p>
+    </div>
+    <div class="pm" role="group" aria-label="Mapa de procesos">
+      <p class="pm-end pm-in"><span>Entrada</span>Necesidades del cliente</p>
+      <div class="pm-body">
+        {filas}
+      </div>
+      <p class="pm-end pm-out"><span>Resultado</span>Satisfacción del cliente</p>
+    </div>
+  </div>
+</section>
+
+{cta('Trabajemos juntos con <em>estos valores</em>.', 'Cuéntenos qué necesita su empresa y le respondemos con una propuesta a la medida.')}'''
+
+builders = {"index.html": inicio, "servicios.html": servicios, "la-firma.html": firma, "contacto.html": contacto, "mision.html": mision}
 OUT.mkdir(parents=True, exist_ok=True)
 for fname, fn in builders.items():
     title, body = fn()
