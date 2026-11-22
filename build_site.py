@@ -101,7 +101,7 @@ def footer():
         </div>
       </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Cifras y Estrategias S.A.S. · C&amp;E Contable</span><span>Diseño y desarrollo: JAC LAB · Propuesta, todos los derechos reservados</span></div>
+    <div class="footer-bottom"><span>© 2026 Cifras y Estrategias S.A.S. · C&amp;E Contable · Medellín, Colombia</span><span>Diseño y desarrollo: JAC LAB · Propuesta, todos los derechos reservados</span></div>
   </div>
 </footer>'''
 
@@ -163,7 +163,7 @@ def inicio():
     return "Inicio", f'''<header class="hero">
   <div class="hero-left">
     <div>
-      <p class="eyebrow">Firma contable · Colombia</p>
+      <p class="eyebrow">Firma contable · Medellín</p>
       <h1 class="bodoni">Para avanzar, <em>rodéate siempre</em> de los mejores.</h1>
       <p class="lead">Contabilidad, finanzas, tributación y auditoría con soluciones a la medida de su empresa y de su patrimonio.</p>
       <div class="actions">
