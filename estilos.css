@@ -291,3 +291,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   .pm-row ol { grid-template-columns: minmax(0, 1fr); }
 }
 @media (min-width: 1061px) { .vision-grid { padding-right: calc(max(var(--gutter), env(safe-area-inset-right, 0px)) + 96px); } }
+
+/* Logo original (imagen) */
+.logo img { display: block; height: 48px; width: auto; }
+.logo-footer img { height: 72px; }
+@media (max-width: 640px) { .logo img { height: 40px; } }

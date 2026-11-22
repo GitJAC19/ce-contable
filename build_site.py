@@ -56,7 +56,7 @@ def header(current):
     return f'''<div class="draft-banner" role="note"><span>Propuesta de diseño</span><span aria-hidden="true">·</span><span>JAC LAB</span><span aria-hidden="true">·</span><span>Borrador</span></div>
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <header class="site-header wrap">
-  <a class="logo" href="index.html" aria-label="C&amp;E Contable, inicio"><b>C&amp;E</b><span>CONTABLE</span></a>
+  <a class="logo" href="index.html"><img src="img/logo-ce-color.png" alt="C&amp;E Contable, inicio" width="82" height="48"></a>
   <nav class="menu" aria-label="Principal">
     <ul>
         {items}
@@ -85,7 +85,7 @@ def footer():
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <a class="logo" href="index.html" aria-label="C&amp;E Contable, inicio"><b>C&amp;E</b><span>CONTABLE</span></a>
+        <a class="logo logo-footer" href="index.html"><img src="img/logo-ce-blanco.png" alt="C&amp;E Contable, inicio" width="123" height="72"></a>
         <p class="footer-motto">Para avanzar, rodéate siempre de los mejores.</p>
       </div>
       <div class="footer-col">
