@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contacto · C&amp;E Contable</title>
+<meta name="description" content="Firma contable C&amp;E Contable: contabilidad, finanzas, tributación y auditoría.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,500..700;1,6..96,500..700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="estilos.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 fill=%27%231F4E7E%27/%3E%3Ctext x=%2732%27 y=%2742%27 font-family=%27Georgia,serif%27 font-size=%2728%27 fill=%27white%27 text-anchor=%27middle%27%3EC%26amp;E%3C/text%3E%3C/svg%3E">
+
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="site-header wrap">
+  <a class="logo" href="index.html" aria-label="C&amp;E Contable, inicio"><b>C&amp;E</b><span>CONTABLE</span></a>
+  <nav class="menu" aria-label="Principal">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="la-firma.html">La firma</a></li>
+        <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+    </ul>
+  </nav>
+  <div class="header-cta">
+    <span class="phone">317 237 5824</span>
+    <a class="btn btn-sm" href="contacto.html">Agenda una asesoría</a>
+  </div>
+  <details class="menu-mobile">
+    <summary>Menú</summary>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="la-firma.html">La firma</a></li>
+        <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+    </ul>
+  </details>
+</header>
+<main id="contenido">
+<section class="page-hero on-blue">
+  <span class="amp" aria-hidden="true">&amp;</span>
+  <span class="lights" aria-hidden="true"></span>
+  <div class="wrap">
+    <p class="crumbs"><a href="index.html">Inicio</a> / Contacto</p>
+    <h1 class="bodoni">Hablemos de su <em>empresa</em></h1>
+    <p class="lead">Escríbanos por WhatsApp o déjenos sus datos y le contactamos.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="kicker">Contacto directo</p>
+      <div class="contact-cards">
+        <article class="member">
+        <div>
+          <span class="mono-tag">Contador 01</span>
+          <h3>Jhonatan Estiben Correa Ángel</h3>
+          <p class="role">Contador Público y Financiero</p>
+        </div>
+        <dl>
+          <dt>WhatsApp</dt><dd>317 237 5824</dd>
+          <dt>Correo</dt><dd>jcorrea@cyecontable.com</dd>
+        </dl>
+        <a class="btn btn-wa btn-sm" href="https://wa.me/573172375824" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      </article>
+        <article class="member">
+        <div>
+          <span class="mono-tag">Contador 02</span>
+          <h3>Jaime Alonzo Usme Arbeláez</h3>
+          <p class="role">Contador Público</p>
+        </div>
+        <dl>
+          <dt>WhatsApp</dt><dd>310 498 0671</dd>
+          <dt>Correo</dt><dd>jusme@cyecontable.com</dd>
+        </dl>
+        <a class="btn btn-wa btn-sm" href="https://wa.me/573104980671" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      </article>
+      </div>
+    </div>
+    <form class="form" id="form-contacto" novalidate>
+      <h2>Solicitar asesoría</h2>
+      <div class="field"><label for="f-nombre">Nombre</label><input id="f-nombre" name="nombre" autocomplete="name" required></div>
+      <div class="field"><label for="f-empresa">Empresa</label><input id="f-empresa" name="empresa" autocomplete="organization"></div>
+      <div class="field"><label for="f-correo">Correo</label><input id="f-correo" name="correo" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="f-tel">Teléfono / WhatsApp</label><input id="f-tel" name="telefono" type="tel" autocomplete="tel"></div>
+      <div class="field full"><label for="f-area">Servicio de interés</label>
+        <select id="f-area" name="area">
+          <option value="">Seleccione un área</option>
+<option>Servicios contables</option>
+<option>Servicios administrativos</option>
+<option>Servicios tributarios</option>
+<option>Auditorías internas</option>
+          <option>No estoy seguro</option>
+        </select>
+      </div>
+      <div class="field full"><label for="f-msg">Mensaje</label><textarea id="f-msg" name="mensaje" placeholder="Cuéntenos brevemente qué necesita su empresa"></textarea></div>
+      <button class="btn" type="submit">Enviar por WhatsApp</button>
+      <p class="form-note">Al enviar, se abrirá WhatsApp con su solicitud lista para mandar.</p>
+      <p class="form-status" id="form-status" role="status" hidden></p>
+    </form>
+  </div>
+</section>
+<script>
+  (function () {
+    var form = document.getElementById('form-contacto');
+    var status = document.getElementById('form-status');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var nombre = form.nombre.value.trim();
+      var correo = form.correo.value.trim();
+      if (!nombre || !correo || correo.indexOf('@') < 1) {
+        status.textContent = 'Escriba su nombre y un correo válido para continuar.';
+        status.hidden = false;
+        return;
+      }
+      var lineas = ['Hola, C&E Contable. Quiero solicitar una asesoría.', 'Nombre: ' + nombre];
+      if (form.empresa.value.trim()) lineas.push('Empresa: ' + form.empresa.value.trim());
+      lineas.push('Correo: ' + correo);
+      if (form.telefono.value.trim()) lineas.push('Teléfono: ' + form.telefono.value.trim());
+      if (form.area.value) lineas.push('Servicio de interés: ' + form.area.value);
+      if (form.mensaje.value.trim()) lineas.push('Mensaje: ' + form.mensaje.value.trim());
+      var url = 'https://wa.me/573172375824?text=' + encodeURIComponent(lineas.join('\n'));
+      status.innerHTML = 'Abriendo WhatsApp… Si no se abre, <a href="' + url + '" target="_blank" rel="noopener">pulse aquí</a>.';
+      window.open(url, '_blank', 'noopener');
+      status.hidden = false;
+    });
+  })();
+</script>
+</main>
+<footer class="site-footer on-blue">
+  <span class="lights" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="index.html" aria-label="C&amp;E Contable, inicio"><b>C&amp;E</b><span>CONTABLE</span></a>
+        <p class="footer-motto">Para avanzar, rodéate siempre de los mejores.</p>
+      </div>
+      <div class="footer-col">
+        <h2>Páginas</h2>
+        <ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="servicios.html">Servicios</a></li>
+<li><a href="la-firma.html">La firma</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2>Contacto</h2>
+        <div class="footer-people">
+<div><p class="who">Jhonatan E. Correa Ángel</p><p>Contador Público y Financiero</p><p class="mono">317 237 5824</p><p class="mono">jcorrea@cyecontable.com</p></div>
+<div><p class="who">Jaime A. Usme Arbeláez</p><p>Contador Público</p><p class="mono">310 498 0671</p><p class="mono">jusme@cyecontable.com</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 C&amp;E Contable</span><span>Contabilidad · Finanzas · Tributación · Auditoría</span></div>
+  </div>
+</footer>
+</body>
+</html>
